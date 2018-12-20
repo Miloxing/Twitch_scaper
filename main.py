@@ -30,7 +30,7 @@ class Streamer(object):
 	def __repr__(self):
 		return "<Streamer {}>".format(self.name)
 
-	def make_request(self):
+	def make_request(self,url):
 		try:
 			r = requests.get(url, headers={"Client-id": CLIENT_ID})
 		except RequestException:
