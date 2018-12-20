@@ -62,6 +62,7 @@ class Streamer(object):
 				f.write(chunck)
 				f.flush( )
 		cprint_green("File downloaded succesfully, at filename: {}.mp4".format(filename))
+		subprocess.run('rclone move {} milo:milo/b/Twitch/{}'.format(filename,self.name))
 		return True
 
 def make_streamers(file="streamers.txt"):
